@@ -10,7 +10,7 @@ import time
 import schedule
 
 def auto_temp():
-    print ('Running')
+    print ('Logging at ', time.ctime())
     with open('info.json') as f:
         info = json.load(f)
         uname = info['uname']
@@ -37,10 +37,11 @@ def auto_temp():
     pwf = driver.find_element_by_name('ctl00$pgContent1$uiPassword')
     pwf.send_keys(pw)
     driver.find_element_by_name('ctl00$pgContent1$btnLogin').click()
+    time.sleep(1)
 
     #move to directory
     driver.find_element_by_xpath('//a[text()="Temperature Taking"]').click()
-    time.sleep(0.1)
+    time.sleep(1)
 
     #put in details
     driver.switch_to.window(driver.window_handles[1])
@@ -50,11 +51,11 @@ def auto_temp():
     driver.find_element_by_name('ctl00$pgContent1$btnSave').click()
 
     #exit
+    print("Job done")
     driver.quit()
 
-schedule.every().day.at("10:00").do(auto_temp)
-schedule.every().day.at("17:00").do(auto_temp)
-#schedule.every().minute.do(auto_temp)
+schedule.every(1).to(43200).seconds.do(auto_temp)
+
 
 if __name__ == "__main__":
     while True:
