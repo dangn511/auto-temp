@@ -3,13 +3,18 @@
 ## Original credit to shohamc1
 
 Tired of updating temperature? This automates it for you!
+
 Please only use if you are sure that you are fine.
 
 ## What's new in this version
 
 Non fixed timing
+
 Guaranteed minimum 2 times a day
+
 For best results, start running script in the morning before class or evening after dinner
+
+Added some waiting periods for stability just in case
 
 ### How to use
 
