@@ -22,3 +22,4 @@ Added some waiting periods for stability just in case
  - Install dependencies from ``requirements.txt``, run ``py -m pip install -r requirements.txt``
  - Edit info_example.json with your details and rename to info.json
  - Run ``python main.pyw``
+ - To save log, run ``python main.pyw > output.txt``
